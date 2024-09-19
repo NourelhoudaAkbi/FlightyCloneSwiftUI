@@ -56,13 +56,41 @@ struct ContentView: View {
                         }
                         .offset(x: -5)
                     }
+                    
+                    // flight path line
+                    //outside path
                     MapPolyline(coordinates: flightRoute)
                         .stroke(.flightyPathSecondary, lineWidth: 5)
+                    // inside path
                     MapPolyline(coordinates: flightRoute)
                         .stroke(.flightyPathPrimary, lineWidth: 2)
                 }
-                    
-                
+            }
+            .ignoresSafeArea()
+            VStack(spacing: 10) {
+                Image(systemName: "map.fill")
+                Divider()
+                    .frame(maxWidth: 30)
+                Image(systemName: "cloud.fill")
+            }
+            .padding(.horizontal, 6)
+            .padding(.vertical, 12)
+            .background(
+                Capsule()
+                    .fill(.thickMaterial)
+            )
+            .padding(.top, 70)
+            .padding(.trailing, 20)
+            .ignoresSafeArea()
+            .sheet(isPresented: $sheetPresented) {
+                FlightDetails(sheetPresented: $sheetPresented)
+                    .presentationDetents([.height(200), .medium, .fraction(0.95)], selection: $uiModel.selectedDetent)
+                    .presentationBackgroundInteraction(
+                        .enabled(upThrough: .medium)
+                    )
+                    .presentationDragIndicator(.hidden)
+                    .presentationCornerRadius(21)
+                    .interactiveDismissDisabled()
             }
         }
     }
