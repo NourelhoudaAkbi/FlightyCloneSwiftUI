@@ -25,7 +25,7 @@ struct FlightDetails: View {
         ScrollView {
             LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                 Section {
-                    
+                    HorizontalActions()
                 } header: {
                     flightDetailsHeader
                 }
