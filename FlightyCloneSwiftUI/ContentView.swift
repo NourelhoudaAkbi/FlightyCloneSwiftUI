@@ -92,12 +92,29 @@ struct ContentView: View {
                     .presentationCornerRadius(21)
                     .interactiveDismissDisabled()
             }
+            
+            Image("reference")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+                .opacity(referenceOpacity)
+                .onTapGesture {
+                    referenceOpacity = 0.0
+                }
         }
+        .background(
+            Rectangle()
+                .fill(.red)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        )
+        
+        
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(UIModel())
 }
 
 struct ViewOffsetKey: PreferenceKey {

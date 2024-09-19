@@ -3,13 +3,7 @@
 //  FlightyCloneSwiftUI
 //
 //  Created by Nour el houda Akbi on 19/9/2024.
-//
 
-//
-//  FlightDetails.swift
-//  flighty
-//
-//  Created by Christopher Free on 4/22/24.
 //
 
 import SwiftUI
@@ -17,7 +11,7 @@ import SwiftUI
 struct FlightDetails: View {
     @EnvironmentObject var uiModel: UIModel
     @State private var previousScrollOffset: CGFloat = 0
-    @State private var closeOpacity: Double = 0
+    @State private var closeOpacity: Double = 1
     @Binding var sheetPresented: Bool
     let minimumOffset: CGFloat = 5
 
@@ -100,6 +94,7 @@ struct FlightDetails: View {
 
 #Preview {
     FlightDetails(sheetPresented: .constant(true))
+        .environmentObject(UIModel())
 }
 
 extension View {

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct FlightyCloneSwiftUIApp: App {
+    @StateObject private var uiModel = UIModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(uiModel)
         }
     }
 }
