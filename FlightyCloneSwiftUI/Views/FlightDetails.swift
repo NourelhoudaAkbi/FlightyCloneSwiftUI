@@ -23,6 +23,7 @@ struct FlightDetails: View {
                     GateDepartureBanner()
                     DepartureAndArrivalDetails()
                     BookingAndSeatDetails()
+                    GoodToKnowSection()
                 } header: {
                     flightDetailsHeader
                 }
