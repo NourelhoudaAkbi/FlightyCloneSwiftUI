@@ -24,6 +24,7 @@ struct FlightDetails: View {
                     DepartureAndArrivalDetails()
                     BookingAndSeatDetails()
                     GoodToKnowSection()
+                    ArrivalForecast()
                 } header: {
                     flightDetailsHeader
                 }
