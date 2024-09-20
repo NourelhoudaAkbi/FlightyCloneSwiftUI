@@ -20,6 +20,7 @@ struct FlightDetails: View {
             LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                 Section {
                     HorizontalActions()
+                    GateDepartureBanner()
                 } header: {
                     flightDetailsHeader
                 }
