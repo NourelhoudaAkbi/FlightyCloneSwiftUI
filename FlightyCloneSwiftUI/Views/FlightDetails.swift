@@ -21,6 +21,7 @@ struct FlightDetails: View {
                 Section {
                     HorizontalActions()
                     GateDepartureBanner()
+                    DepartureAndArrivalDetails()
                 } header: {
                     flightDetailsHeader
                 }
